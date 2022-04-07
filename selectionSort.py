@@ -1,29 +1,29 @@
 from time import time
 
-def selectionSort(lista):
-    global comparaciones
-    n = len(lista)
+def selectionSort(list):
+    global comparisons
+    n = len(list)
 
     for i in range(n - 1):
-        menor = i
-        comparaciones += 1
+        minus = i
+        comparisons += 1
 
         for j in range(i + 1, n):
-            if lista[j] < lista[menor]:
-                menor = j
+            if list[j] < list[minus]:
+                minus = j
 
-        lista[i], lista[menor] = lista[menor], lista[i]
+        list[i], list[minus] = list[minus], list[i]
 
 
-lista = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
-comparaciones = 0
+list = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
+comparisons = 0
 
 t0 = time()
-selectionSort(lista)
+selectionSort(list)
 t1 = time()
 
-print ("Lista ordenada:")
-print (lista, "\n")
+print ("Sorted List:")
+print (list, "\n")
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
-print ("Comparaciones:", comparaciones)
+print ("Time: {0:f} seconds".format(t1 - t0))
+print ("comparisons:", comparisons)

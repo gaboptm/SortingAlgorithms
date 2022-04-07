@@ -1,34 +1,34 @@
 from time import time
 
-def shellSort(lista):
-    global comparaciones
-    n = len(lista)
+def shellSort(list):
+    global comparisons
+    n = len(list)
     gap = n // 2
 
     while gap > 0:
         for i in range(gap, n):
-            val = lista[i]
+            val = list[i]
             j = i
-            comparaciones += 1
+            comparisons += 1
 
-            while j >= gap and lista[j-gap] > val:
-                lista[j] = lista[j-gap]
+            while j >= gap and list[j-gap] > val:
+                list[j] = list[j-gap]
                 j -= gap
 
-            lista[j] = val
+            list[j] = val
 
         gap //= 2
 
 
-lista = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
-comparaciones = 0
+list = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
+comparisons = 0
 
 t0 = time()
-shellSort(lista)
+shellSort(list)
 t1 = time()
 
-print ("Lista ordenada:")
-print (lista, "\n")
+print ("Sorted List:")
+print (list, "\n")
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
-print ("Comparaciones:", comparaciones)
+print ("Time: {0:f} seconds".format(t1 - t0))
+print ("comparisons:", comparisons)

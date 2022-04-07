@@ -1,26 +1,26 @@
 from time import time
 
 
-def bubbleSort(lista):
-    global comparaciones
-    n = len(lista)
+def bubbleSort(list):
+    global comparisons
+    n = len(list)
 
     for i in range(1,n):
         for j in range(n-i):
-            comparaciones += 1
+            comparisons += 1
 
-            if lista[j] > lista[j+1]:
-                lista[j], lista[j+1] = lista[j+1], lista[j]
+            if list[j] > list[j+1]:
+                list[j], list[j+1] = list[j+1], list[j]
 
-lista = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
-comparaciones = 0
+list = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
+comparisons = 0
 
 t0 = time()
-bubbleSort(lista)
+bubbleSort(list)
 t1 = time()
 
-print("Lista ordenada:")
-print (lista, "\n")
+print("Sorted list:")
+print (list, "\n")
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
-print ("Comparaciones:", comparaciones)
+print ("Time: {0:f} seconds".format(t1 - t0))
+print ("comparisons:", comparisons)

@@ -28,4 +28,4 @@ else:
 t1 = time()
 
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
+print ("Time: {0:f} seconds".format(t1 - t0))

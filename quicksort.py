@@ -1,36 +1,36 @@
 from time import time
 
-def particion(lista, izq, der):
-	global comparaciones
-	pivote = lista[der]
-	indice = izq
+def partition(list, left, right):
+	global comparisons
+	pivot = list[right]
+	index = left
 
-	for i in range(izq, der):
-		comparaciones += 1
+	for i in range(left, right):
+		comparisons += 1
 		
-		if lista[i] <= pivote:
-			lista[indice], lista[i] = lista[i], lista[indice]
-			indice += 1
+		if list[i] <= pivot:
+			list[index], list[i] = list[i], list[index]
+			index += 1
 
-	lista[indice], lista[der] = lista[der], lista[indice]
-	return indice
+	list[index], list[right] = list[right], list[index]
+	return index
 
-def quicksort(lista, izq, der):
-    if izq < der:
-        pivote_indice = particion(lista, izq, der)
-        quicksort(lista, izq, pivote_indice-1)
-        quicksort(lista, pivote_indice+1, der)
+def quicksort(list, left, right):
+    if left < right:
+        pivot_index = partition(list, left, right)
+        quicksort(list, left, pivot_index-1)
+        quicksort(list, pivot_index+1, right)
 
 
-lista = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
-comparaciones = 0
+list = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
+comparisons = 0
 
 t0 = time()
-quicksort(lista, 0, len(lista)-1)
+quicksort(list, 0, len(list)-1)
 t1 = time()
 
-print ("Lista ordenada:")
-print (lista, "\n")
+print ("Sorted List:")
+print (list, "\n")
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
-print ("Comparaciones:", comparaciones)
+print ("Time: {0:f} seconds".format(t1 - t0))
+print ("comparisons:", comparisons)
