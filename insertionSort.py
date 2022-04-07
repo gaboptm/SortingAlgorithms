@@ -1,30 +1,30 @@
 from time import time
 
-def insertionSort(lista):
-    n = len(lista)
-    global comparaciones
+def insertionSort(list):
+    n = len(list)
+    global comparisons
 
     for i in range(1, n):
-        val = lista[i]
+        val = list[i]
         j = i
 
-        while j > 0 and lista[j-1] > val:
-            lista[j] = lista[j-1]
+        while j > 0 and list[j-1] > val:
+            list[j] = list[j-1]
             j -= 1
-            comparaciones += 1
+            comparisons += 1
 
-        lista[j] = val
+        list[j] = val
 
 
-lista = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
-comparaciones = 0
+list = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
+comparisons = 0
 
 t0 = time()
-insertionSort(lista)
+insertionSort(list)
 t1 = time()
 
-print ("Lista ordenada:")
-print (lista, "\n")
+print ("Sorted List:")
+print (list, "\n")
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
-print ("Comparaciones:", comparaciones)
+print ("Time: {0:f} seconds".format(t1 - t0))
+print ("comparisons:", comparisons)

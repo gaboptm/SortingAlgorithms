@@ -4,18 +4,18 @@ def mergeSort(list):
     if len(list) <= 1:
         return list
 
-    medio = len(list) // 2
-    izquierda = list[:medio]
-    derecha = list[medio:]
+    middle = len(list) // 2
+    left = list[:middle]
+    right = list[middle:]
 
-    izquierda = mergeSort(izquierda)
-    derecha = mergeSort(derecha)
+    left = mergeSort(left)
+    right = mergeSort(right)
 
-    return merge(izquierda, derecha)
+    return merge(left, right)
 
 def merge(listA, listB):
     global comparisons
-    list_nueva = []
+    new_list = []
     a = 0
     b = 0
 
@@ -23,21 +23,21 @@ def merge(listA, listB):
         comparisons += 1
 
         if listA[a] < listB[b]:
-            list_nueva.append(listA[a])
+            new_list.append(listA[a])
             a += 1
         else:
-            list_nueva.append(listB[b])
+            new_list.append(listB[b])
             b += 1
 
     while a < len(listA):
-        list_nueva.append(listA[a])
+        new_list.append(listA[a])
         a += 1
 
     while b < len(listB):
-        list_nueva.append(listB[b])
+        new_list.append(listB[b])
         b += 1
 
-    return list_nueva
+    return new_list
 
 
 list = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
@@ -47,8 +47,8 @@ t0 = time()
 list = mergeSort(list)
 t1 = time()
 
-print ("list ordenada:")
+print ("Sorted List:")
 print (list, "\n")
 
-print ("Tiempo: {0:f} segundos".format(t1 - t0))
+print ("Time: {0:f} seconds".format(t1 - t0))
 print ("comparisons:", comparisons)
